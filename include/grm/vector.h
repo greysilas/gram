@@ -1,6 +1,9 @@
 #pragma once
 
 #include <array>
+#include <cmath>
+
+#include "./common/epsilon.h"
 
 namespace grm {
 
@@ -62,7 +65,18 @@ namespace grm {
          */
         bool isUnit();
 
+        /**
+         * @brief Operator overload that allows typical array-indexing
+         * @param index The index to access  
+         */
+        T& operator[](uint32_t index);
+
         
+        /**
+         * @brief Operator overload that allows typical array-indexing
+         * @param index The index to access  
+         */
+        const T& operator[](uint32_t index) const;
 
         /**
          * @brief Scalar multiplication
@@ -113,10 +127,60 @@ namespace grm {
         Vector<T, Dim> operator-(const Vector<T,Dim>& vector);
 
 
+        /**
+         * @brief Assignment-Scalar Multiplication overload
+         * Performs vector scalar multiplication between object vector and parameter vector
+         * @param vector The scalar value that will be multiplied with object vector
+         * @returns The instance of the object that calls
+         */
+        Vector<T, Dim>& operator*=(T scalar);
+
+        /**
+         * @brief Assignment-Vector Multiplication overload
+         * Performs vector Multiplication between object vector and parameter vector
+         * @param vector The vector that will be multiplied with the object vector
+         * @returns The instance of the object that calls
+         */
+        Vector<T, Dim>& operator*=(const Vector<T, Dim>& vector);
+
+
+        /**
+         * @brief Assignment-Scalar Division overload
+         * Performs vector scalar division between object vector and parameter vector
+         * @param vector The scalar value that will be divided with object vector
+         * @returns The instance of the object that calls
+         */
+        Vector<T, Dim>& operator/=(T scalar);
+
+
+        /**
+         * @brief Assignment-Vector Division overload
+         * Performs vector division between object vector and parameter vector
+         * @param vector The vector that will be divded with the object vector
+         * @returns The instance of the object that calls
+         */
+        Vector<T, Dim>& operator/=(const Vector<T, Dim>& vector);
+
+        /**
+         * @brief Assignment-Addition overload
+         * Performs vector addition between object vector and parameter vector
+         * @param vector The vector that will be added with the object vector
+         * @returns The instance of the object that calls
+         */
+        Vector<T, Dim>& operator+=(const Vector<T, Dim>& vector);
+
+        /**
+         * @brief Assignment-Subtraction overload
+         * Performs vector subtraction between object vector and parameter vector
+         * @param vector The vector that will be subtracted with the object vector
+         * @returns The instance of the object that calls
+         */
+        Vector<T, Dim>& operator-=(const Vector<T, Dim>& vector);
+
 
         private:
 
-            /* Components of the vector. These are publicy accessed by the template specializations */
+            /* Components of the vector. These are publicy accessed by the template specializations or by the [] operator */
             std::array<T, Dim> m_components;  
 
     };
