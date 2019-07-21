@@ -4,15 +4,20 @@ namespace grm {
     template<typename T>
     Vector<T,3>::Vector() {
         
-        components.fill(0);
+        elements.fill(0);
 
     }
 
     template<typename T>
+    Vector<T,3>::Vector(T scalar) {
+        elements.fill(scalar);
+    }
+
+    template<typename T>
     Vector<T,3>::Vector(T x, T y, T z) {
-        components[0] = x;
-        components[1] = y;
-        components[2] = z;
+        elements[0] = x;
+        elements[1] = y;
+        elements[2] = z;
     }
  
 
@@ -31,13 +36,13 @@ namespace grm {
     
     template<typename T>
     T& Vector<T, 3>::operator[](uint32_t index) {
-        return components[index];
+        return elements[index];
     }
     
     
     template<typename T>
     const T& Vector<T, 3>::operator[](uint32_t index) const {
-        return components[index];
+        return elements[index];
     }
 
  

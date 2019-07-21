@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdint.h>
 #include <array>
 #include <cmath>
 
@@ -26,14 +27,14 @@ namespace grm {
         
         /**
          * @brief Default constructor
-         * Sets all components to 0 value.
+         * Sets all elements to 0 value.
          */
         Vector();
 
     
         /**
          * @brief Scalar constructor
-         * Initializes all the components of the vector to the parameter given
+         * Initializes all the elements of the vector to the parameter given
          * @param scalar The scalar value used to initialize the vector
          */
         Vector(T scalar);
@@ -70,7 +71,7 @@ namespace grm {
         
         
         
-        std::array<T, Dim> components;  
+        std::array<T, Dim> elements;  
 
     };
 

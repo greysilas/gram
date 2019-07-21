@@ -8,8 +8,8 @@
 namespace grm {
 
     /* Typedefs */
-    typedef Vector<float,3> vec3;
-    typedef Vector<int,3> ivec3;
+    typedef Vector<float,3> Vec3;
+    typedef Vector<int,3> IVec3;
 
 
 
@@ -19,6 +19,7 @@ namespace grm {
         public:
 
         Vector();
+        Vector(T scalar);
         Vector(T x, T y, T z);
 
         T magnitude();
@@ -42,7 +43,7 @@ namespace grm {
  
 
 		union {
-			std::array<T, 3> components;
+			std::array<T, 3> elements;
 			struct {
 				T x;
 				T y;

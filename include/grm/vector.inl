@@ -6,7 +6,7 @@ namespace grm {
     template<typename T, uint32_t Dim>
     Vector<T, Dim>::Vector() {
         
-        components.fill(0);
+        elements.fill(0);
 
     }
 
@@ -14,7 +14,7 @@ namespace grm {
     template<typename T, uint32_t Dim>
     Vector<T, Dim>::Vector(T scalar) {
 
-        components.fill(scalar);
+        elements.fill(scalar);
 
     }
 
@@ -43,13 +43,13 @@ namespace grm {
 
     template<typename T, uint32_t Dim>
     T& Vector<T, Dim>::operator[](uint32_t index) {
-        return components[index];
+        return elements[index];
     }
     
     
     template<typename T, uint32_t Dim>
     const T& Vector<T, Dim>::operator[](uint32_t index) const {
-        return components[index];
+        return elements[index];
     }
 
    
