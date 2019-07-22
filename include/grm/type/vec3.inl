@@ -24,13 +24,13 @@ namespace grm {
 	template<typename T>
 	T Vector<T,3>::magnitude() {
 		
-		return grm::magnitude((*this));
+		return vec::magnitude((*this));
 
 	}
 
     template<typename T>
     void Vector<T,3>::normalize() {
-		return grm::normalize((*this));
+		return vec::normalize((*this));
     }
 
     

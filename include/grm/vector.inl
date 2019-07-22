@@ -21,7 +21,7 @@ namespace grm {
     template<typename T, uint32_t Dim>
     T Vector<T, Dim>::magnitude() {
 
-        return grm::magnitude((*this));   
+        return vec::magnitude((*this));   
      
 
     }
@@ -29,14 +29,14 @@ namespace grm {
     template<typename T, uint32_t Dim>
     void Vector<T, Dim>::normalize() {
 
-       return grm::normalize((*this));
+       return vec::normalize((*this));
 
     }
     
     template<typename T, uint32_t Dim>
     bool Vector<T,Dim>::isUnit() {
 
-       return grm::isUnit((*this));
+       return vec::isUnit((*this));
     
     }
 

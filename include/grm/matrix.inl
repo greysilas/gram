@@ -22,7 +22,23 @@ namespace grm {
     template<typename T, uint32_t Rows, uint32_t Cols>
     Matrix<T, Cols, Rows> Matrix<T, Rows, Cols>::getTranspose() {
         
-        return grm::getTranspose((*this));
+        return mat::getTranspose((*this));
+
+    }
+
+    // Symmetry check
+    template<typename T, uint32_t Rows, uint32_t Cols>
+    bool Matrix<T, Rows, Cols>::isSymmetric() {
+       
+        return mat::isSymmetric(*(this));
+
+    }
+
+    //Antisymmetry check
+    template<typename T, uint32_t Rows, uint32_t Cols>
+    bool Matrix<T, Rows, Cols>::isAntisymmetric() {
+       
+        return mat::isAntisymmetric(*(this));
 
     }
 

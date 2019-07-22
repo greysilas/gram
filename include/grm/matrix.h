@@ -37,6 +37,21 @@ namespace grm {
         Matrix<T, Cols, Rows> getTranspose();
 
         /**
+         * @brief Check if matrix is symmetric
+         * A matrix is symmetric if it is equal to its transpose
+         * @returns true if matrix is symmetric
+         */
+        bool isSymmetric();
+     
+     
+        /**
+         * @brief Check if matrix is antisymmetric
+         * A matrix is antisymmetric if it is equal to its transpose when negated
+         * @returns true if matrix is antisymmetric
+         */
+        bool isAntisymmetric();
+
+        /**
          * @brief Operator overload for accesing elements
          * Given [i][j], returns the element in the ith row and jth column
          * @param i Returns the vector in the ith row 

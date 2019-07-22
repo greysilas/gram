@@ -11,24 +11,29 @@ namespace grm {
     template<typename T, uint32_t Dim>
     class Vector;
 
+    // All vector functions are stored within the vec namespace
+    namespace vec {
+
     
 
 
-    /**
-     * @brief Calculates the magnitude of the vector
-     * @param vector The vector whose magnitude will be calculated
-     * @returns the magnitude of the vector
-     */  
-    template<typename T, uint32_t Dim>
-    T magnitude(const Vector<T, Dim>& vector);
+        /**
+         * @brief Calculates the magnitude of the vector
+         * @param vector The vector whose magnitude will be calculated
+         * @returns the magnitude of the vector
+         */  
+        template<typename T, uint32_t Dim>
+        T magnitude(const Vector<T, Dim>& vector);
 
-    template<typename T, uint32_t Dim>
-    void normalize(Vector<T, Dim>& vector);
+        template<typename T, uint32_t Dim>
+        void normalize(Vector<T, Dim>& vector);
 
-    template<typename T, uint32_t Dim>
-    bool isUnit(const Vector<T, Dim>& vector);
+        template<typename T, uint32_t Dim>
+        bool isUnit(const Vector<T, Dim>& vector);
 
 
+
+    }
 
     /* Operator Overloading */
  
@@ -145,6 +150,7 @@ namespace grm {
     Vector<T, Dim>& operator-=( Vector<T,Dim>& vec1, const Vector<T, Dim>& vec2);
 
 
+  
 
 
 }

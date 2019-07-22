@@ -2,36 +2,43 @@
 
 namespace grm {
 
-    // Calculate Magnitude of given vector
-    template<typename T, uint32_t Dim>
-    T magnitude(const Vector<T, Dim>& vector) {
-        // Square sum of the components
-        T sqSum = 0;
+    namespace vec {
+        
+        // Calculate Magnitude of given vector
+        template<typename T, uint32_t Dim>
+        T magnitude(const Vector<T, Dim>& vector) {
+            // Square sum of the components
+            T sqSum = 0;
 
-        for(uint32_t i = 0 ; i < Dim; i++) {
-            sqSum += (vector[i] * vector[i]);
-        } 
+            for(uint32_t i = 0 ; i < Dim; i++) {
+                sqSum += (vector[i] * vector[i]);
+            } 
 
-        return std::sqrt(sqSum);
-    }
+            return std::sqrt(sqSum);
+        }
 
-    // Normalize given vector
-    template<typename T, uint32_t Dim>
-    void normalize(Vector<T, Dim>& vector) {
-        T mag = vector.magnitude();
-        if(mag == 0) return;
+        // Normalize given vector
+        template<typename T, uint32_t Dim>
+        void normalize(Vector<T, Dim>& vector) {
+            T mag = vector.magnitude();
+            if(mag == 0) return;
 
-        vector = vector / mag;
-    }
+            vector = vector / mag;
+        }
 
 
-    // Return true if given vector is boolean
-    template<typename T, uint32_t Dim>
-    bool isUnit(const Vector<T, Dim>& vector) {
+        // Return true if given vector is boolean
+        template<typename T, uint32_t Dim>
+        bool isUnit(const Vector<T, Dim>& vector) {
 
-        return epsilonEqual(magnitude(vector), 1.0f);
+            return epsilonEqual(magnitude(vector), 1.0f);
 
-    }
+        }
+
+
+        
+    } // Namespace vec
+
     
     // Vector-Scalar Multiplication
     template<typename T, uint32_t Dim>
@@ -147,4 +154,4 @@ namespace grm {
 
 
 
-}
+} // Namespace grm
