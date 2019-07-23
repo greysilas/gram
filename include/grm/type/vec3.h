@@ -9,7 +9,7 @@ namespace grm {
 
     /* Typedefs */
     typedef Vector<float,3> Vec3;
-    typedef Vector<int,3> IVec3;
+    typedef Vector<int,3>   IVec3;
 
 
 

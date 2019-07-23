@@ -24,6 +24,7 @@ namespace grm {
         
         return mat::getTranspose((*this));
 
+
     }
 
     // Symmetry check
