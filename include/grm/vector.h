@@ -56,6 +56,17 @@ namespace grm {
         bool isUnit();
 
         /**
+         * @brief Performs dot product with object vector and given vector
+         * @param vector The second operand vector
+         * @returns The result scalar
+         */
+        T dot(const Vector<T, Dim>& vec);
+
+        /**
+         * 
+         */
+
+        /**
          * @brief Operator overload that allows typical array-indexing
          * @param index The index to access  
          */

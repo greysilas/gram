@@ -76,7 +76,7 @@ namespace grm {
     Matrix<T, N, M> operator*(const Matrix<T, N, P>& mat1, const Matrix<T, P, M>& mat2);
 
     /**
-     * @brief Specialized Matrix-Matrix operator for two 3x3 Matrices
+     * @brief Specialized Matrix-Matrix multiplication operator for two 3x3 Matrices
      * @returns a new result matrix
      */
     template<typename T>

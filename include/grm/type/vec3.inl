@@ -33,6 +33,31 @@ namespace grm {
 		return vec::normalize((*this));
     }
 
+    template<typename T>
+    bool Vector<T, 3>::isUnit() {
+    
+        return vec::isUnit((*this));
+    
+    }
+
+   
+    template<typename T>
+    T Vector<T, 3>::dot(const Vector<T, 3>& vec) {
+        return (elements[0] * vec[0] + elements[1] * vec[1] + elements[2] * vec[2]);
+    }
+    
+    template<typename T>
+    Vector<T,3> Vector<T, 3>::cross(const Vector<T, 3>& vec) {
+        
+        return Vector<T, 3> (
+                                elements[1] * vec[2] - elements[2] * vec[1],
+                                elements[2] * vec[0] - elements[0] * vec[2],
+                                elements[0] * vec[1] - elements[1] * vec[0]
+                            );
+
+
+    }
+
     
     template<typename T>
     T& Vector<T, 3>::operator[](uint32_t index) {

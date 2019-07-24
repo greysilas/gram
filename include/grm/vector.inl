@@ -40,16 +40,27 @@ namespace grm {
     
     }
 
+    template<typename T, uint32_t Dim>
+    T Vector<T, Dim>::dot(const Vector<T, Dim>& vec) {
+        
+        return vec::dot((*this), vec);
+
+    }
+
 
     template<typename T, uint32_t Dim>
     T& Vector<T, Dim>::operator[](uint32_t index) {
+     
         return elements[index];
+    
     }
     
     
     template<typename T, uint32_t Dim>
     const T& Vector<T, Dim>::operator[](uint32_t index) const {
+    
         return elements[index];
+   
     }
 
    

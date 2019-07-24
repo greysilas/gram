@@ -22,9 +22,35 @@ namespace grm {
         Vector(T scalar);
         Vector(T x, T y, T z);
 
+       /**
+         * @brief Returns the magnitude of the vector
+         */
         T magnitude();
 
+        /**
+         * @brief Normalizes the vector to a unit length
+         */
         void normalize();
+
+        /**
+         * @brief returns true if vector is of unit length
+         */
+        bool isUnit();
+
+        /**
+         * @brief Performs dot product with object vector and given vector
+         * @param vector The second operand vector
+         * @returns The result scalar
+         */
+        T dot(const Vector<T, 3>& vec);
+
+
+        /**
+         * @brief Performs cross product with object vector and given vector
+         * @param vector The second operand vector
+         * @returns The result vector
+         */
+        Vector<T, 3> cross(const Vector<T, 3>& vec);
 
         /**
          * @brief Operator overload that allows typical array-indexing

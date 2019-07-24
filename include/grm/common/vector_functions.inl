@@ -34,12 +34,25 @@ namespace grm {
             return epsilonEqual(magnitude(vector), 1.0f);
 
         }
+ 
+       // Dot product
+        template<typename T, uint32_t Dim>
+        T dot(const Vector<T, Dim>& vec1, const Vector<T, Dim>& vec2) {
+            T productSum = 0;
+            
+            for(uint32_t i = 0; i < Dim; i++) {
+                productSum += vec1[i] * vec2[i];
+            }
 
+            return productSum;
+        }
 
         
     } // Namespace vec
 
-    
+    /*** Operator Overloading  ***/
+
+
     // Vector-Scalar Multiplication
     template<typename T, uint32_t Dim>
     Vector<T, Dim> operator*(const Vector<T, Dim>& vec, T scalar) {
@@ -51,6 +64,18 @@ namespace grm {
         return resultVec;
     }
 
+   
+    //  Vec3-Scalar Multiplication
+    template<typename T>
+    Vector<T, 3> operator*(const Vector<T, 3>& vec, T scalar) {
+        Vector<T, 3> resultVec;
+        resultVec[0] = vec[0] * scalar;
+        resultVec[1] = vec[1] * scalar;
+        resultVec[2] = vec[2] * scalar;
+        return resultVec;
+    }
+
+
     // Vector-Vector Multiplication
     template<typename T, uint32_t Dim>
     Vector<T, Dim> operator*(const Vector<T, Dim>& vec1, const Vector<T, Dim>& vec2) {
@@ -59,6 +84,16 @@ namespace grm {
             resultVec[i] = vec1[i] * vec2[i];
         }
 
+        return resultVec;
+    }
+
+    // Vec3-Vec3 Multiplication
+    template<typename T>
+    Vector<T, 3> operator*(const Vector<T, 3>& vec1, const Vector<T, 3>& vec2) {
+        Vector<T, 3> resultVec;
+        resultVec[0] = vec1[0] * vec2[0];
+        resultVec[1] = vec1[1] * vec2[1];
+        resultVec[2] = vec1[2] * vec2[2];
         return resultVec;
     }
 
