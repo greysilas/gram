@@ -48,6 +48,16 @@ namespace grm {
     }
 
 
+	template<typename T, uint32_t Dim>
+	Vector<T, Dim> Vector<T, Dim>::project(const Vector<T, Dim>& vec) {
+        return vec::project((*this), vec);
+    }
+
+    template<typename T, uint32_t Dim>
+    Vector<T, Dim> Vector<T, Dim>::reject(const Vector<T, Dim>& vec) {
+        return vec::reject((*this), vec);
+    }
+
     template<typename T, uint32_t Dim>
     T& Vector<T, Dim>::operator[](uint32_t index) {
      

@@ -46,8 +46,27 @@ namespace grm {
          */
         template<typename T, uint32_t Dim>
         T dot(const Vector<T, Dim>& vec1, const Vector<T, Dim>& vec2);
- 
+
+        /**
+         * @brief Projects the first vector onto the second
+         * @param vec1 The original vector
+         * @param vec2 The vector that the first parameter is being projected on
+         * @returns A new result vector parallel to vec2
+         */
+        template<typename T, uint32_t Dim>
+        Vector<T, Dim> project(const Vector<T, Dim>& vec1, const Vector<T, Dim>& vec2);
         
+        /**
+         * @brief Rejects the first vector onto the second
+         * @param vec1 The original vector
+         * @param vec2 The vector that the first parameter is being rejected on
+         * @returns A new result vector perpindicular to vec2
+         */
+        template<typename T, uint32_t Dim>
+        Vector<T, Dim> reject(const Vector<T, Dim>& vec1, const Vector<T, Dim>& vec2);
+
+
+
     }
 
     /* Operator Overloading */

@@ -47,6 +47,20 @@ namespace grm {
             return productSum;
         }
 
+        // Vector Projection
+        template<typename T, uint32_t Dim>
+        Vector<T, Dim> project(const Vector<T, Dim>& vec1, const Vector<T, Dim>& vec2) {
+
+            return (  vec2 * (dot(vec1,vec2) / dot(vec2,vec2))  );
+
+        }
+
+        // Vector Rejection
+        template<typename T, uint32_t Dim>
+        Vector<T, Dim> reject(const Vector<T, Dim>& vec1, const Vector<T, Dim>& vec2) {
+            return (vec1 - ( vec2 * (dot(vec1,vec2) / dot(vec2,vec2))));
+        }
+
         
     } // Namespace vec
 

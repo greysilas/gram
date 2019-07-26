@@ -63,8 +63,19 @@ namespace grm {
         T dot(const Vector<T, Dim>& vec);
 
         /**
-         * 
+         * @brief Projects the first vector onto the second
+         * @param vec The vector that the object vector is being projected on
+         * @returns A new result vector parallel to vec
          */
+        Vector<T, Dim> project(const Vector<T, Dim>& vec);
+        
+        /**
+         * @brief Rejects the first vector onto the second
+         * @param vec The vector that the object vector is being rejected on
+         * @returns A new result vector perpendicular to vec
+         */
+        Vector<T, Dim> reject(const Vector<T, Dim>& vec);
+
 
         /**
          * @brief Operator overload that allows typical array-indexing

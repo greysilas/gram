@@ -53,6 +53,24 @@ namespace grm {
         Vector<T, 3> cross(const Vector<T, 3>& vec);
 
         /**
+         * @brief Projects the first vector onto the second
+         * @param vec The vector that the object vector is being projected on
+         * @returns A new result vector parallel to vec
+         */
+        Vector<T, 3> project(const Vector<T, 3>& vec);
+        
+        /**
+         * @brief Rejects the first vector onto the second
+         * @param vec The vector that the object vector is being rejected on
+         * @returns A new result vector perpendicular to vec
+         */
+        Vector<T, 3> reject(const Vector<T, 3>& vec);
+
+
+        
+
+
+        /**
          * @brief Operator overload that allows typical array-indexing
          * @param index The index to access  
          */

@@ -47,6 +47,17 @@ namespace grm {
     }
     
     template<typename T>
+    Vector<T, 3> Vector<T, 3>::project(const Vector<T, 3>& vec) {
+        return vec::project((*this), vec);
+    }
+
+    template<typename T>
+    Vector<T, 3> Vector<T, 3>::reject(const Vector<T, 3>& vec) {
+        return vec::reject((*this), vec);
+    }
+
+
+    template<typename T>
     Vector<T,3> Vector<T, 3>::cross(const Vector<T, 3>& vec) {
         
         return Vector<T, 3> (
